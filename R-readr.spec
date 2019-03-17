@@ -4,18 +4,13 @@
 #
 Name     : R-readr
 Version  : 1.3.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/readr_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readr_1.3.1.tar.gz
-Summary  : Read Rectangular Text Data
+Summary  : Improved methods for reading rectangular data.
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-readr-lib = %{version}-%{release}
-Requires: R-BH
-Requires: R-Rcpp
-Requires: R-clipr
-Requires: R-hms
-Requires: R-tibble
 BuildRequires : R-BH
 BuildRequires : R-Rcpp
 BuildRequires : R-clipr
@@ -24,9 +19,7 @@ BuildRequires : R-tibble
 BuildRequires : buildreq-R
 
 %description
-rectangular data (like 'csv', 'tsv', and 'fwf'). It is designed to flexibly
-    parse many types of data found in the wild, while still cleanly failing when
-    data unexpectedly changes.
+# readr <a href="https://readr.tidyverse.org"><img src="man/figures/logo.png" align="right" height = 150 /></a>
 
 %package lib
 Summary: lib components for the R-readr package.
@@ -44,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1545405107
+export SOURCE_DATE_EPOCH=1552836236
 
 %install
-export SOURCE_DATE_EPOCH=1545405107
+export SOURCE_DATE_EPOCH=1552836236
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -83,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library readr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  readr || :
 
 
 %files
@@ -130,12 +122,62 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/readr/help/readr.rdx
 /usr/lib64/R/library/readr/html/00Index.html
 /usr/lib64/R/library/readr/html/R.css
-/usr/lib64/R/library/readr/libs/symbols.rds
+/usr/lib64/R/library/readr/tests/spelling.R
+/usr/lib64/R/library/readr/tests/testthat.R
+/usr/lib64/R/library/readr/tests/testthat/basic-df-singlequote.csv
+/usr/lib64/R/library/readr/tests/testthat/basic-df.csv
+/usr/lib64/R/library/readr/tests/testthat/colour-test
+/usr/lib64/R/library/readr/tests/testthat/empty-file
+/usr/lib64/R/library/readr/tests/testthat/enc-iso-8859-1.txt
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.csv
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.txt
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.txt.bz2
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.txt.gz
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.txt.xz
+/usr/lib64/R/library/readr/tests/testthat/eol-cr.txt.zip
+/usr/lib64/R/library/readr/tests/testthat/eol-crlf.csv
+/usr/lib64/R/library/readr/tests/testthat/eol-crlf.txt
+/usr/lib64/R/library/readr/tests/testthat/eol-lf.csv
+/usr/lib64/R/library/readr/tests/testthat/eol-lf.txt
+/usr/lib64/R/library/readr/tests/testthat/fwf-trailing.txt
+/usr/lib64/R/library/readr/tests/testthat/helper.R
+/usr/lib64/R/library/readr/tests/testthat/non-tabular.csv
+/usr/lib64/R/library/readr/tests/testthat/null-file
+/usr/lib64/R/library/readr/tests/testthat/raw.csv
+/usr/lib64/R/library/readr/tests/testthat/sample_text.txt
+/usr/lib64/R/library/readr/tests/testthat/table-crash
+/usr/lib64/R/library/readr/tests/testthat/test-col-spec.R
+/usr/lib64/R/library/readr/tests/testthat/test-collectors.R
+/usr/lib64/R/library/readr/tests/testthat/test-encoding.R
+/usr/lib64/R/library/readr/tests/testthat/test-eol.R
+/usr/lib64/R/library/readr/tests/testthat/test-locale.R
+/usr/lib64/R/library/readr/tests/testthat/test-melt-chunked.R
+/usr/lib64/R/library/readr/tests/testthat/test-melt-csv.R
+/usr/lib64/R/library/readr/tests/testthat/test-melt-fwf.R
+/usr/lib64/R/library/readr/tests/testthat/test-melt-table.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-character.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-count-fields.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-datetime.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-factors.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-logical.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-numeric.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing-time.R
+/usr/lib64/R/library/readr/tests/testthat/test-parsing.R
+/usr/lib64/R/library/readr/tests/testthat/test-problems.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-chunked.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-csv.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-file.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-fwf.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-lines.R
+/usr/lib64/R/library/readr/tests/testthat/test-read-table.R
+/usr/lib64/R/library/readr/tests/testthat/test-source.R
+/usr/lib64/R/library/readr/tests/testthat/test-tokenizer-delim.R
+/usr/lib64/R/library/readr/tests/testthat/test-type-convert.R
+/usr/lib64/R/library/readr/tests/testthat/test-write-lines.R
+/usr/lib64/R/library/readr/tests/testthat/test-write.R
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/R/library/readr/libs/librcon.so.avx2
-/usr/lib64/R/library/readr/libs/librcon.so.avx512
 /usr/lib64/R/library/readr/libs/readr.so
 /usr/lib64/R/library/readr/libs/readr.so.avx2
 /usr/lib64/R/library/readr/libs/readr.so.avx512
