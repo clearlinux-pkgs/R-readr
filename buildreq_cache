@@ -4,4 +4,6 @@ R-Rcpp
 R-cli
 R-clipr
 R-hms
+R-pillar
+R-pkgconfig
 R-tibble
