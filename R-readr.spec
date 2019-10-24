@@ -4,19 +4,21 @@
 #
 Name     : R-readr
 Version  : 1.3.1
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/readr_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readr_1.3.1.tar.gz
-Summary  : Read Rectangular Text Data
+Summary  : Improved methods for reading rectangular data.
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-readr-lib = %{version}-%{release}
+Requires: R-BH
 Requires: R-R6
 Requires: R-Rcpp
 Requires: R-clipr
 Requires: R-crayon
 Requires: R-hms
 Requires: R-tibble
+BuildRequires : R-BH
 BuildRequires : R-R6
 BuildRequires : R-Rcpp
 BuildRequires : R-clipr
@@ -24,11 +26,10 @@ BuildRequires : R-crayon
 BuildRequires : R-hms
 BuildRequires : R-tibble
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-rectangular data (like 'csv', 'tsv', and 'fwf'). It is designed to flexibly
-    parse many types of data found in the wild, while still cleanly failing when
-    data unexpectedly changes.
+# readr <a href="https://readr.tidyverse.org"><img src="man/figures/logo.png" align="right" height = 150 /></a>
 
 %package lib
 Summary: lib components for the R-readr package.
@@ -46,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569293695
+export SOURCE_DATE_EPOCH=1571886382
 
 %install
-export SOURCE_DATE_EPOCH=1569293695
+export SOURCE_DATE_EPOCH=1571886382
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
