@@ -4,7 +4,7 @@
 #
 Name     : R-readr
 Version  : 2.0.0
-Release  : 42
+Release  : 43
 URL      : https://cran.r-project.org/src/contrib/readr_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readr_2.0.0.tar.gz
 Summary  : Read Rectangular Text Data
@@ -20,6 +20,8 @@ Requires: R-hms
 Requires: R-lifecycle
 Requires: R-rlang
 Requires: R-tibble
+Requires: R-tzdb
+Requires: R-vroom
 BuildRequires : R-R6
 BuildRequires : R-cli
 BuildRequires : R-clipr
@@ -55,10 +57,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628005028
+export SOURCE_DATE_EPOCH=1628180574
 
 %install
-export SOURCE_DATE_EPOCH=1628005028
+export SOURCE_DATE_EPOCH=1628180574
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
