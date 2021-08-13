@@ -4,7 +4,7 @@
 #
 Name     : R-readr
 Version  : 2.0.1
-Release  : 44
+Release  : 45
 URL      : https://cran.r-project.org/src/contrib/readr_2.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/readr_2.0.1.tar.gz
 Summary  : Read Rectangular Text Data
