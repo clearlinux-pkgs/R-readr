@@ -1,7 +1,9 @@
 # This file contains recursive sources that require this package
 R-DiagrammeR
+R-Ecfun
 R-WikidataQueryServiceR
 R-WikidataR
 R-haven
 R-readODS
+R-rio
 R-tidyverse
